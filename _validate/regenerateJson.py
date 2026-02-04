@@ -53,7 +53,7 @@ def regenerateJsonFile(filePath: str, errorFilePath: str | None) -> None:
 	addonData.update({key: regeneratedAddonData[key] for key in updatedData if key in regeneratedAddonData})
 	with open(filePath, "wt", encoding="utf-8") as f:
 		json.dump(addonData, f, indent="\t", ensure_ascii=False)
-	print(f"Wrote json file: {filePath}")
+		f.write("\n")
 
 
 def main():
